@@ -1,11 +1,23 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import CardGenerator from '../components/CardGenerator.tsx';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="定制化模板生成器">
+	<main class="min-h-screen bg-gradient-to-br from-pink-50 via-white to-rose-50 overflow-hidden">
+		<div class="container mx-auto px-4 py-12">
+			<div class="text-center mb-8">
+				<div class="relative inline-block">
+					<h1 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-500 mb-4 animate-fade-in">
+						定制化模板生成器
+					</h1>
+					<div class="absolute -inset-1 bg-gradient-to-r from-pink-400 to-rose-400 opacity-20 blur-xl -z-10 rounded-full"></div>
+				</div>
+			</div>
+			<CardGenerator client:load />
+		</div>
+	</main>
 </Layout>
